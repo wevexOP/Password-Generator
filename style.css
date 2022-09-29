@@ -42,6 +42,19 @@ header {
   padding: 30px 40px;
 }
 
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  column-gap: 3rem;
+}
+
+label {
+  font-weight: bold;
+
+}
+
 .card-header::after {
   content: " ";
   display: block;
@@ -88,9 +101,19 @@ header {
   cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
+button {
+  grid-column: span 2;
+  cursor: pointer;
   background: #c0c7cf;
+  border: 2px solid orange;
+  color: #e7e9eb;
+  padding: .5rem 1rem;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+button:hover {
+  background-color: aqua;
 }
 
 .float-right {
@@ -116,6 +139,7 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  word-break: break-all;
 }
 
 @media (max-width: 690px) {
