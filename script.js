@@ -2,7 +2,12 @@
 var generateBtn = document.querySelector("#generate");
 
 function randomInt(min, max) {
-  return Math.floor(Math.random()*(max - min) + min)
+  if (!max) {
+    max - min
+    min = 0
+  }
+  var rand = Math.random()
+  return Math.floor(min*(1 - rand) + rand*max)
 }
 
 function getRandomItem(list) {
@@ -56,18 +61,25 @@ function generatePassword() {
   if (userSymbols === true) {
     optionsSpecs.push(symbolList)
   }
-
-  console.log(optionsSpecs)
+  
+  if (optionsSpecs.length === 0) {
+    optionsSpecs.push(lowercaseList)
+  }
+  
 
   var generatedPassword = " "
 
   for (var i = 0; i < passwordLength; i++) {
     var randomList = getRandomItem(optionsSpecs)
     var randomChar = getRandomItem(randomList)
-    console.log(randomChar)
+    generatedPassword += randomChar
   }
+  
+  console.log(generatedPassword)
+  return generatedPassword
 
 }
+
 
 // Write password to the #password input
 function writePassword() {
