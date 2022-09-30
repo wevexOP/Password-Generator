@@ -1,20 +1,16 @@
-const characterAmountRange = document.getElementById
-('characterAmountRange')
-const characterAmountNumber = document.getElementById
-('characterAmountNumber')
-
-characterAmountNumber.addEventListener('input', syncCharacterAmount)
-characterAmountRange.addEventListener('input', syncCharacterAmount)
-
-function syncCharacterAmount(e) {
-  const value = e.target.value 
-  characterAmountNumber.value = value
-  characterAmountRange.value = value
-}
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+function generatePassword() {
+
+  var userInput = window.prompt('Please specify the length of your new password.')
+
+  var passwordLength = parseInt(userInput)
+ 
+  if(isNaN(passwordLength)) {
+    window.alert("That is not a number. Please input the numbers of characters you want in your password length.")
+  }
+}
 
 // Write password to the #password input
 function writePassword() {
