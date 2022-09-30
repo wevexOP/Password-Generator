@@ -5,6 +5,10 @@ function randomInt(min, max) {
   return Math.floor(Math.random()*(max - min) + min)
 }
 
+function getRandomItem(list) {
+  return list[randomInt(0, list.length - 1)]
+}
+
 function generatePassword() {
 
   var userInput = window.prompt('Please specify the length of your new password.')
@@ -53,8 +57,15 @@ function generatePassword() {
     optionsSpecs.push(symbolList)
   }
 
+  console.log(optionsSpecs)
+
   var generatedPassword = " "
 
+  for (var i = 0; i < passwordLength; i++) {
+    var randomList = getRandomItem(optionsSpecs)
+    var randomChar = getRandomItem(randomList)
+    console.log(randomChar)
+  }
 
 }
 
@@ -65,9 +76,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-  for (var i = 0; i < passwordLength; i++) {
-    var randomItem = optionsSpecs[randomInt(0, optionsSpecs.length - 1)]
-  }
+  
 
 }
 
