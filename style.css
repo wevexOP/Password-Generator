@@ -65,6 +65,7 @@ label {
 
 .card-body {
   min-height: 100px;
+  max-width: 500px;
 }
 
 .card-footer {
